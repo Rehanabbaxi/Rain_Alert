@@ -1,11 +1,14 @@
 import requests
 from twilio.rest import Client
 from dotenv import load_dotenv
+import os 
+
+load_dotenv()
 
 OWM_Endpoint = "https://api.openweathermap.org/data/2.5/forecast"
-api_key =load_dotenv("OWM_api_key")
-account_sid = load_dotenv("twilio_account_sid")
-auth_token = load_dotenv("twilio_auth_token")
+api_key =os.getenv("OWM_api_key")
+account_sid = os.getenv("twilio_account_sid")
+auth_token = os.getenv("twilio_auth_token")
 
 
 weather_params = {
